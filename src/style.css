@@ -1,0 +1,196 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+
+  --color-lab-50: #ecfeff;
+  --color-lab-100: #cffafe;
+  --color-lab-200: #a5f3fc;
+  --color-lab-300: #67e8f9;
+  --color-lab-400: #22d3ee;
+  --color-lab-500: #06b6d4;
+  --color-lab-600: #0891b2;
+  --color-lab-700: #0e7490;
+  --color-lab-800: #155e75;
+  --color-lab-900: #164e63;
+
+  --color-accent-400: #a78bfa;
+  --color-accent-500: #8b5cf6;
+  --color-accent-600: #7c3aed;
+
+  --animate-fade-up: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in: fade-in 0.4s ease both;
+  --animate-scale-in: scale-in 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-slide-right: slide-right 0.4s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-pulse-soft: pulse-soft 2s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-soft {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply font-sans antialiased;
+  @apply bg-slate-50 text-slate-900;
+  @apply dark:bg-slate-950 dark:text-slate-100;
+  min-height: 100dvh;
+}
+
+#app {
+  min-height: 100dvh;
+}
+
+.mesh-bg {
+  background-image:
+    radial-gradient(at 0% 0%, rgb(6 182 212 / 0.15) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgb(139 92 246 / 0.12) 0, transparent 50%),
+    radial-gradient(at 100% 100%, rgb(6 182 212 / 0.08) 0, transparent 50%),
+    radial-gradient(at 0% 100%, rgb(139 92 246 / 0.08) 0, transparent 50%);
+}
+
+.dark .mesh-bg {
+  background-image:
+    radial-gradient(at 0% 0%, rgb(6 182 212 / 0.08) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgb(139 92 246 / 0.06) 0, transparent 50%),
+    radial-gradient(at 50% 50%, rgb(15 23 42 / 0.5) 0, transparent 70%);
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-xl border border-white/60;
+  @apply dark:bg-slate-900/60 dark:border-slate-700/50;
+}
+
+.glass-strong {
+  @apply bg-white/85 backdrop-blur-2xl border border-white/70 shadow-xl shadow-slate-200/40;
+  @apply dark:bg-slate-900/80 dark:border-slate-700/60 dark:shadow-black/30;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+.stagger > * {
+  animation: fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.stagger > *:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.stagger > *:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.stagger > *:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.stagger > *:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.stagger > *:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.stagger > *:nth-child(6) {
+  animation-delay: 0.3s;
+}
+
+.card-hover {
+  @apply transition-all duration-300;
+}
+
+.card-hover:hover {
+  @apply -translate-y-1 shadow-lg shadow-lab-500/10 dark:shadow-lab-400/5;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  @apply outline-none ring-2 ring-lab-500/40 ring-offset-2 ring-offset-white dark:ring-offset-slate-900;
+}

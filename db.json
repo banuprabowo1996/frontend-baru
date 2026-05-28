@@ -1,0 +1,322 @@
+{
+  "users": [
+    {
+      "idUser": 1,
+      "nama": "Admin Update",
+      "email": "admin@lab.com",
+      "password": "admin123",
+      "role": "ADMIN"
+    },
+    {
+      "idUser": 2,
+      "nama": "Petugas Lab",
+      "email": "petugas@lab.com",
+      "password": "petugas123",
+      "role": "PETUGAS"
+    },
+    {
+      "idUser": 3,
+      "nama": "Ahmad Rizki",
+      "email": "ahmad@mail.com",
+      "password": "user123",
+      "role": "PEMINJAM"
+    },
+    {
+      "idUser": 4,
+      "nama": "Siti Nurhaliza",
+      "email": "siti@mail.com",
+      "password": "user123",
+      "role": "PEMINJAM"
+    },
+    {
+      "idUser": 5,
+      "nama": "Budi Santoso",
+      "email": "budi@mail.com",
+      "password": "user123",
+      "role": "PEMINJAM"
+    }
+  ],
+  "kategori": [
+    {
+      "idKategori": 1,
+      "namaKategori": "Elektronik",
+      "deskripsi": "Alat elektronik dan kelistrikan"
+    },
+    {
+      "idKategori": 2,
+      "namaKategori": "Mekanik",
+      "deskripsi": "Alat mekanik dan permesinan"
+    },
+    {
+      "idKategori": 3,
+      "namaKategori": "Kimia",
+      "deskripsi": "Alat laboratorium kimia"
+    },
+    {
+      "idKategori": 4,
+      "namaKategori": "Komputer",
+      "deskripsi": "Perangkat komputer dan aksesoris"
+    },
+    {
+      "idKategori": 5,
+      "namaKategori": "Alat Ukur",
+      "deskripsi": "Alat ukur dan instrumentasi"
+    }
+  ],
+  "barang": [
+    {
+      "idBarang": 1,
+      "idKategori": 1,
+      "kategori": {
+        "idKategori": 1,
+        "namaKategori": "Elektronik",
+        "deskripsi": "Alat elektronik dan kelistrikan"
+      },
+      "namaBarang": "Multimeter Digital",
+      "kodeBarang": "EL-001",
+      "jumlahTotal": 10,
+      "jumlahTersedia": 8,
+      "kondisi": "BAIK",
+      "lokasi": "Rak A1",
+      "harga": 250000
+    },
+    {
+      "idBarang": 2,
+      "idKategori": 2,
+      "kategori": {
+        "idKategori": 2,
+        "namaKategori": "Mekanik",
+        "deskripsi": "Alat mekanik dan permesinan"
+      },
+      "namaBarang": "Toolkit Mekanik",
+      "kodeBarang": "MK-001",
+      "jumlahTotal": 5,
+      "jumlahTersedia": 3,
+      "kondisi": "BAIK",
+      "lokasi": "Rak B2",
+      "harga": 500000
+    },
+    {
+      "idBarang": 3,
+      "idKategori": 3,
+      "kategori": {
+        "idKategori": 3,
+        "namaKategori": "Kimia",
+        "deskripsi": "Alat laboratorium kimia"
+      },
+      "namaBarang": "Tabung Reaksi",
+      "kodeBarang": "KM-001",
+      "jumlahTotal": 50,
+      "jumlahTersedia": 45,
+      "kondisi": "BAIK",
+      "lokasi": "Rak C1",
+      "harga": 15000
+    },
+    {
+      "idBarang": 4,
+      "idKategori": 4,
+      "kategori": {
+        "idKategori": 4,
+        "namaKategori": "Komputer",
+        "deskripsi": "Perangkat komputer dan aksesoris"
+      },
+      "namaBarang": "Laptop Dell",
+      "kodeBarang": "KO-001",
+      "jumlahTotal": 5,
+      "jumlahTersedia": 2,
+      "kondisi": "BAIK",
+      "lokasi": "Rak D1",
+      "harga": 12000000
+    },
+    {
+      "idBarang": 5,
+      "idKategori": 5,
+      "kategori": {
+        "idKategori": 5,
+        "namaKategori": "Alat Ukur",
+        "deskripsi": "Alat ukur dan instrumentasi"
+      },
+      "namaBarang": "Mikrometer",
+      "kodeBarang": "AU-001",
+      "jumlahTotal": 8,
+      "jumlahTersedia": 6,
+      "kondisi": "BAIK",
+      "lokasi": "Rak E1",
+      "harga": 350000
+    },
+    {
+      "idBarang": 6,
+      "idKategori": 1,
+      "kategori": {
+        "idKategori": 1,
+        "namaKategori": "Elektronik",
+        "deskripsi": "Alat elektronik dan kelistrikan"
+      },
+      "namaBarang": "Osiloskop",
+      "kodeBarang": "EL-002",
+      "jumlahTotal": 3,
+      "jumlahTersedia": 2,
+      "kondisi": "BAIK",
+      "lokasi": "Rak A2",
+      "harga": 5000000
+    },
+    {
+      "idBarang": 7,
+      "idKategori": 4,
+      "kategori": {
+        "idKategori": 4,
+        "namaKategori": "Komputer",
+        "deskripsi": "Perangkat komputer dan aksesoris"
+      },
+      "namaBarang": "Proyektor",
+      "kodeBarang": "KO-002",
+      "jumlahTotal": 4,
+      "jumlahTersedia": 4,
+      "kondisi": "BAIK",
+      "lokasi": "Rak D2",
+      "harga": 4500000
+    },
+    {
+      "idBarang": 8,
+      "idKategori": 1,
+      "kategori": {
+        "idKategori": 2,
+        "namaKategori": "Mekanik",
+        "deskripsi": "Alat mekanik dan permesinan"
+      },
+      "namaBarang": "Bor Tangan",
+      "kodeBarang": "MK-002",
+      "jumlahTotal": 6,
+      "jumlahTersedia": 5,
+      "kondisi": "BAIK",
+      "lokasi": "Rak B3",
+      "harga": 180000
+    }
+  ],
+  "peminjaman": [
+    {
+      "idPeminjaman": 1,
+      "idPeminjam": 3,
+      "idPetugas": 1,
+      "peminjam": {
+        "idUser": 3,
+        "nama": "Ahmad Rizki",
+        "email": "ahmad@mail.com",
+        "role": "PEMINJAM"
+      },
+      "petugas": {
+        "idUser": 1,
+        "nama": "Admin Lab",
+        "email": "admin@lab.com",
+        "role": "ADMIN"
+      },
+      "tglPinjam": "2026-05-20T08:00:00.000Z",
+      "tglKembali": "2026-05-27T16:00:00.000Z",
+      "status": "DISETUJUI",
+      "catatan": "Praktikum elektronika dasar",
+      "details": [
+        {
+          "idDetail": 1,
+          "idPeminjaman": 1,
+          "idBarang": 1,
+          "barang": {
+            "idBarang": 1,
+            "namaBarang": "Multimeter Digital",
+            "kodeBarang": "EL-001"
+          },
+          "jumlah": 2,
+          "kondisiKembali": null
+        },
+        {
+          "idDetail": 2,
+          "idPeminjaman": 1,
+          "idBarang": 6,
+          "barang": {
+            "idBarang": 6,
+            "namaBarang": "Osiloskop",
+            "kodeBarang": "EL-002"
+          },
+          "jumlah": 1,
+          "kondisiKembali": null
+        }
+      ]
+    },
+    {
+      "idPeminjaman": 2,
+      "idPeminjam": 4,
+      "idPetugas": null,
+      "peminjam": {
+        "idUser": 4,
+        "nama": "Siti Nurhaliza",
+        "email": "siti@mail.com",
+        "role": "PEMINJAM"
+      },
+      "petugas": null,
+      "tglPinjam": "2026-05-25T09:00:00.000Z",
+      "tglKembali": "2026-06-01T16:00:00.000Z",
+      "status": "MENUNGGU",
+      "catatan": "Penelitian bahan kimia",
+      "details": [
+        {
+          "idDetail": 3,
+          "idPeminjaman": 2,
+          "idBarang": 3,
+          "barang": {
+            "idBarang": 3,
+            "namaBarang": "Tabung Reaksi",
+            "kodeBarang": "KM-001"
+          },
+          "jumlah": 10,
+          "kondisiKembali": null
+        }
+      ]
+    },
+    {
+      "idPeminjaman": 3,
+      "idPeminjam": 5,
+      "idPetugas": 2,
+      "peminjam": {
+        "idUser": 5,
+        "nama": "Budi Santoso",
+        "email": "budi@mail.com",
+        "role": "PEMINJAM"
+      },
+      "petugas": {
+        "idUser": 2,
+        "nama": "Petugas Lab",
+        "email": "petugas@lab.com",
+        "role": "PETUGAS"
+      },
+      "tglPinjam": "2026-05-22T10:00:00.000Z",
+      "tglKembali": "2026-05-28T16:00:00.000Z",
+      "status": "DIPINJAM",
+      "catatan": "Perbaikan komputer",
+      "details": [
+        {
+          "idDetail": 4,
+          "idPeminjaman": 3,
+          "idBarang": 4,
+          "barang": {
+            "idBarang": 4,
+            "namaBarang": "Laptop Dell",
+            "kodeBarang": "KO-001"
+          },
+          "jumlah": 1,
+          "kondisiKembali": null
+        },
+        {
+          "idDetail": 5,
+          "idPeminjaman": 3,
+          "idBarang": 2,
+          "barang": {
+            "idBarang": 2,
+            "namaBarang": "Toolkit Mekanik",
+            "kodeBarang": "MK-001"
+          },
+          "jumlah": 1,
+          "kondisiKembali": null
+        }
+      ]
+    }
+  ]
+}

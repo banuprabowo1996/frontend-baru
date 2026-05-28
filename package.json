@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "dev:server": "node server.js",
+    "dev:all": "concurrently -n vue,api -c cyan,yellow 'npm run dev' 'npm run dev:server'",
     "build": "vue-tsc -b && vite build",
     "preview": "vite preview"
   },
@@ -21,6 +23,8 @@
     "@types/node": "^24.12.3",
     "@vitejs/plugin-vue": "^6.0.6",
     "@vue/tsconfig": "^0.9.1",
+    "concurrently": "^10.0.0",
+    "json-server": "^0.17.4",
     "tailwindcss": "^4.3.0",
     "typescript": "~6.0.2",
     "vite": "^8.0.12",

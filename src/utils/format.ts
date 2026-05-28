@@ -1,6 +1,8 @@
 export function formatDate(value: string | null | undefined): string {
   if (!value) return '—'
-  return new Date(value + 'T00:00:00').toLocaleDateString('id-ID', {
+  const date = value.includes('T') ? new Date(value) : new Date(value + 'T00:00:00')
+  if (isNaN(date.getTime())) return '—'
+  return date.toLocaleDateString('id-ID', {
     day: 'numeric',
     month: 'short',
     year: 'numeric',

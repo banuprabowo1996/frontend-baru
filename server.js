@@ -1,16 +1,19 @@
 import jsonServer from 'json-server'
+import express from 'express'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import crypto from 'node:crypto'
+import fs from 'node:fs'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
 const server = jsonServer.create()
 const dbPath = path.join(__dirname, 'db.json')
 const db = jsonServer.router(dbPath).db
-const middlewares = jsonServer.defaults()
 
 const API_PREFIX = '/api'
+const DIST = path.join(__dirname, 'dist')
+const isProd = fs.existsSync(DIST)
 
 const idFieldMap = {
   users: 'idUser',
@@ -46,9 +49,18 @@ function getUserByEmail(email) {
   return db.get('users').find({ email }).value()
 }
 
-// Default middlewares (cors, static, logger)
-server.use(middlewares)
+// CORS
+server.use((_req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header('Access-Control-Allow-Headers', '*')
+  res.header('Access-Control-Allow-Methods', '*')
+  next()
+})
 server.use(jsonServer.bodyParser)
+
+// Static files: dist/ (prod) or public/ (dev)
+const staticDir = isProd ? DIST : path.join(__dirname, 'public')
+server.use(express.static(staticDir))
 
 // ---- CUSTOM ROUTES ----
 
@@ -186,10 +198,17 @@ server.use((req, res, next) => {
   next()
 })
 
-const PORT = 4000
+// ---- SPA FALLBACK (production) ----
+if (isProd) {
+  server.get('*', (_req, res) => {
+    res.sendFile(path.join(DIST, 'index.html'))
+  })
+}
+
+const PORT = process.env.PORT || 4000
 server.listen(PORT, () => {
-  console.log(`\n  JSON Server running on http://localhost:${PORT}${API_PREFIX}`)
-  console.log(`  Vue dev server: http://localhost:5173`)
+  console.log(`\n  Server running on http://localhost:${PORT}`)
+  console.log(`  API: http://localhost:${PORT}${API_PREFIX}`)
   console.log()
   console.log('  Credentials:')
   console.log(`    Admin:   admin@lab.com / admin123`)

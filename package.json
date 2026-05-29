@@ -8,12 +8,17 @@
     "dev:server": "node server.js",
     "dev:all": "concurrently -n vue,api -c cyan,yellow 'npm run dev' 'npm run dev:server'",
     "build": "vue-tsc -b && vite build",
+    "start": "node server.js",
     "preview": "vite preview"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "dependencies": {
     "@lucide/vue": "^1.16.0",
     "@vueuse/core": "^14.3.0",
     "axios": "^1.16.1",
+    "json-server": "^0.17.4",
     "pinia": "^3.0.4",
     "vue": "^3.5.34",
     "vue-router": "^5.0.7"
@@ -24,7 +29,6 @@
     "@vitejs/plugin-vue": "^6.0.6",
     "@vue/tsconfig": "^0.9.1",
     "concurrently": "^10.0.0",
-    "json-server": "^0.17.4",
     "tailwindcss": "^4.3.0",
     "typescript": "~6.0.2",
     "vite": "^8.0.12",
